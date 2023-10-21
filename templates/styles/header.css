@@ -1,0 +1,32 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    padding: 10px;
+    z-index: 999;
+    align-items: center;
+    background-color: rgba(216, 222, 233, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px ridge #3b4252;
+    height: 25px;
+}
+
+.navbar {
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: #3b4252;
+    font-size: large;
+}
+
+.right-link {
+    position: fixed;
+    margin-right: 10px;
+    right: 0;
+    /* Добавьте дополнительные стили для этой ссылки по вашему усмотрению */
+}
