@@ -8,7 +8,7 @@ header {
     z-index: 999;
     align-items: center;
     justify-content: center;
-    background-color: rgba(216, 222, 233, 0.9);
+    background-color: rgba(216, 222, 233, 0.3);
     backdrop-filter: blur(10px);
     border-bottom: 2px ridge #3b4252;
     height: 25px;
@@ -28,5 +28,4 @@ a {
     position: fixed;
     margin-right: 10px;
     right: 0;
-    /* Добавьте дополнительные стили для этой ссылки по вашему усмотрению */
 }

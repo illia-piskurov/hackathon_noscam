@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon</title>
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/common.css">
-    <link rel="stylesheet" href="../static/styles/container.css">
-    <link rel="stylesheet" href="../static/styles/container2.css">
-    <link rel="stylesheet" href="../static/styles/button.css">
-    <link rel="stylesheet" href="../static/styles/field.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/container.css">
+    <link rel="stylesheet" href="styles/container2.css">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/field.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="#">Пошук</a>
-            <a href="#">Статті</a>
-            <a href="#" class="right-link">Війти</a>
+            <a href="/">Пошук</a>
+            <a href="articles.html">Статті</a>
+            <a href="authorization.html" class="right-link">Війти</a>
         </nav>
     </header>
 
     <div class="container">
         <form>
             <label for="number">Номер:</label>
-            <input type="text" id="number" name="number" class="field">
-            <button class="button">
+            <input type="text" id="number" name="number" class="field" pattern="\+38\d{10}" title="Число має бути у форматі +380992276890">
+            <button class="button" type="submit">
                 Пошук
             </button>
         </form> 
     </div>
-    
-    <div class="container2">
-        <h4>Номер {{number}} є в базі</h4>
+
+    <div class="container2 {{style}} {{message_visible}}">
+        <h4>{{message}}</h4>
     </div>
-    <div class="container2">
+    <div class="container2 {{comment_visible}}">
         <h4>Коментар:</h4>
         <h4>{{comment}}</h4>
     </div>
