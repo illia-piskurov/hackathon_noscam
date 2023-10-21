@@ -1,0 +1,20 @@
+.comment-group {
+    display: flex;
+    align-items: baseline;
+}
+
+.comment-group label {
+    margin-right: 9px;
+}
+
+.comment-group #comment {
+    font-size: large;
+}
+
+.comment-group #desc {
+    font-size: large;
+}
+
+.comment-group #text {
+    font-size: large;
+}

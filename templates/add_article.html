@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon</title>
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/common.css">
+    <link rel="stylesheet" href="../static/styles/container-content.css">
+    <link rel="stylesheet" href="../static/styles/comment-group.css">
+    <link rel="stylesheet" href="../static/styles/button.css">
+    <link rel="stylesheet" href="../static/styles/field.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#">Пошук</a>
+            <a href="#">Статті</a>
+            <a href="#" class="right-link">Війти</a>
+        </nav>
+    </header>
+
+    <div class="container-content">
+        <form>
+            <label for="title" id="mg-left-title">Заголовок:</label>
+            <input type="text" id="title" name="title" class="field" 
+                placeholder="Напишіть заголовок статті..." size="40"><br>
+
+            <div class="comment-group">
+                <label for="desc">Короткий опис:</label>
+                <textarea id="desc" name="desc" class="field" 
+                    placeholder="Напишіть короткий опис до статті..." rows="8" cols="70"></textarea>
+            </div>
+
+            <div class="comment-group">
+                <label for="text" id="mg-left-text">Стаття:</label>
+                <textarea id="text" name="text" class="field" 
+                    placeholder="Напишіть статтю..." rows="8" cols="70"></textarea>
+            </div>
+            
+            <button class="button" id="mg-left-add-article-button">
+                Додати
+            </button>
+        </form> 
+    </div>
+</body>
+</html>

@@ -6,7 +6,8 @@
     <title>Hackathon</title>
     <link rel="stylesheet" href="../static/styles/header.css">
     <link rel="stylesheet" href="../static/styles/common.css">
-    <link rel="stylesheet" href="../static/styles/container-center.css">
+    <link rel="stylesheet" href="../static/styles/container-content.css">
+    <link rel="stylesheet" href="../static/styles/comment-group.css">
     <link rel="stylesheet" href="../static/styles/button.css">
     <link rel="stylesheet" href="../static/styles/field.css">
 </head>
@@ -19,16 +20,19 @@
         </nav>
     </header>
 
-    <div class="container-center">
+    <div class="container-content">
         <form>
-            <label for="email">Пошта:</label>
-            <input type="text" id="email" name="email" class="field"><br>
+            <label for="number" id="mg-left-number">Номер:</label>
+            <input type="text" id="number" name="number" class="field"><br>
 
-            <label for="password">Пароль:</label>
-            <input type="text" id="password" name="password" class="field"><br>
+            <div class="comment-group">
+                <label for="comment">Коментар:</label>
+                <textarea id="comment" name="comment" class="field" 
+                    placeholder="Залиште свій коментар..." rows="8" cols="70"></textarea>
+            </div>
             
-            <button class="button">
-                Реєстрація
+            <button class="button" id="mg-left-add-number-button">
+                Додати
             </button>
         </form> 
     </div>

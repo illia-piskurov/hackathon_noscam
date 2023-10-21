@@ -1,0 +1,72 @@
+.container-content {
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 15px;
+    border-radius: 10px;
+    background-color: #d8dee9;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3b4252;
+}
+
+.container-content #mg-left-number {
+    margin-left: 28px;
+}
+
+.container-content #mg-left-title {
+    margin-left: 38px;
+}
+
+.container-content #mg-left-text {
+    margin-left: 67px;
+}
+
+.container-content #mg-left-add-number-button {
+    margin-left: 98px;
+}
+
+.container-content #mg-left-add-article-button {
+    margin-left: 144px;
+}
+
+.container-content #number {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.container-content #comment {
+    margin-bottom: 5px;
+}
+
+.container-content #title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.container-content #desc {
+    margin-bottom: 5px;
+}
+
+.container-content #text {
+    margin-bottom: 5px;
+}
+
+.container-content .button {
+    width: 210px;
+    height: fit-content;
+    font-size: large;
+    padding: 10px;
+    margin-left: 98px;
+    margin-bottom: 10px;
+}
+
+.container-content .button:hover {
+    background-color: #A3BE8C;
+    transition: 0.7s;
+}
+
+.container-content .button:active {
+    background-color:#000000;
+    transition: 0.7s;
+}
