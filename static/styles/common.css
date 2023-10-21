@@ -9,3 +9,7 @@ html {
 label {
     font-weight: bold;
 }
+
+.none {
+    display: none;
+}

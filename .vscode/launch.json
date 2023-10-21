@@ -5,16 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Python: main.py",
             "type": "python",
             "request": "launch",
-            "program": "${file}",
+            "program": "main.py",
             "console": "integratedTerminal",
             "justMyCode": true,
             "env": {
                 "MONGO_USERNAME": "mongostar",
                 "MONGO_PASSWORD": "starmongo",
-                "MONGO_DB_NAME": "hackathon"
+                "MONGO_DB_NAME": "hackathon",
+                "MONGO_PORT": "27017",
             }
         }
     ]
