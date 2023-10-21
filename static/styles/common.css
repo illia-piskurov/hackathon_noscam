@@ -5,3 +5,7 @@ html {
     font-family: 'JetBrains Mono', Courier, monospace;
     color: #3b4252;
 }
+
+label {
+    font-weight: bold;
+}

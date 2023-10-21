@@ -1,0 +1,39 @@
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+.container-center .button-center{
+    text-align: center;
+}
+
+.container-center .button {
+    width: 283px;
+    height: fit-content;
+    font-size: xx-large;
+    padding: 30px;
+}
+
+.container-center .button:hover {
+    background-color: #A3BE8C;
+}
+
+.container-center .button:active {
+    background-color:#000000;
+    transition: 0.7s;
+}
+
+.container-center #email {
+    margin-left: 11px;
+    margin-bottom: 5px;
+}
+
+.container-center #password {
+    margin-bottom: 5px;
+}
+
+.container-center p {
+    text-align: center;
+}
