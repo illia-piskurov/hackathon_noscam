@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 model = Model(mongo)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home() -> str:
     number = request.args.get('number')
     if number is None or number == '':
@@ -40,6 +40,19 @@ def home() -> str:
                                     message=message,
                                     comment_visible='none',
                                     style='green')
+        
+@app.route('/registration', methods=['POST'])
+def registration() -> str:
+    email    = request.form['email']
+    password = request.form['password']
+
+@app.route('/authorization.html', methods=['GET', 'POST'])
+def authorization() -> str:
+    if request.method == 'GET':
+        return render_template('authorization.html')
+    elif request.method == 'POST':
+        pass
+
 
 @app.route('/get_data')
 def get_data():
