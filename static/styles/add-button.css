@@ -1,0 +1,27 @@
+.add-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #81A1C1;
+    color: #D8DEE9;
+    transition: 0.7s;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 60px;
+}
+
+.add-button:hover {
+    background-color:#8FBCBB;
+    transition: 0.7s;
+
+}
+
+.add-button:active {
+    background-color:#000000;
+    transition: 0.7s;
+}

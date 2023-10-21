@@ -1,0 +1,35 @@
+.container-article-closed {
+    margin-top: 70px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 15px;
+    border-radius: 10px;
+    background-color: #d8dee9;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3b4252;
+}
+
+.container-article-closed hr {
+    border: none;
+    border-top: 2px solid #000;
+}
+
+.container-article-closed .button {
+    width: 210px;
+    height: fit-content;
+    font-size: large;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.container-article-closed .button:hover {
+    background-color: #D08770;
+    transition: 0.7s;
+}
+
+.container-article-closed .button:active {
+    background-color:#000000;
+    transition: 0.7s;
+}
