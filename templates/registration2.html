@@ -6,10 +6,8 @@
     <title>Hackathon</title>
     <link rel="stylesheet" href="../static/styles/header.css">
     <link rel="stylesheet" href="../static/styles/common.css">
-    <link rel="stylesheet" href="../static/styles/container.css">
-    <link rel="stylesheet" href="../static/styles/container2.css">
+    <link rel="stylesheet" href="../static/styles/container-center.css">
     <link rel="stylesheet" href="../static/styles/button.css">
-    <link rel="stylesheet" href="../static/styles/field.css">
 </head>
 <body>
     <header>
@@ -20,22 +18,16 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-center">
         <form>
-            <label for="number">Номер:</label>
-            <input type="text" id="number" name="number" class="field">
-            <button class="button">
-                Пошук
-            </button>
+            <p>Вам було надіслано повідомлення за вказаною поштою.</p>
+            <p>Для того, щоб авторизуватись, натисніть кнопку "Підтвердити" в листі.</p>
+            <div class="button-center">
+                <button class="button">
+                    До Входу
+                </button>
+            </div>
         </form> 
-    </div>
-    
-    <div class="container2">
-        <h4>Номер {{number}} є в базі</h4>
-    </div>
-    <div class="container2">
-        <h4>Коментар:</h4>
-        <h4>{{comment}}</h4>
     </div>
 </body>
 </html>

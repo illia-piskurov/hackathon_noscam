@@ -7,6 +7,7 @@ header {
     padding: 10px;
     z-index: 999;
     align-items: center;
+    justify-content: center;
     background-color: rgba(216, 222, 233, 0.9);
     backdrop-filter: blur(10px);
     border-bottom: 2px ridge #3b4252;
@@ -18,7 +19,6 @@ header {
 }
 
 a {
-    text-align: center;
     text-decoration: none;
     color: #3b4252;
     font-size: large;
