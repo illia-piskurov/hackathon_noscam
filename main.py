@@ -9,15 +9,7 @@ app = Flask(__name__,
             static_folder='static',
             template_folder='templates')
 
-m_user = os.environ.get('MONGO_USERNAME')
-m_pass = os.environ.get('MONGO_PASSWORD')
-m_db   = os.environ.get('MONGO_DB_NAME')
-m_port = os.environ.get('MONGO_PORT')
-
-app.config["MONGO_URI"] = f'mongodb://{m_user}:{m_pass}@localhost:{m_port}/{m_db}'
-mongo = PyMongo(app)
-
-model = Model(mongo)
+model = Model()
 
 @app.route('/', methods=['GET'])
 def home() -> str:
@@ -53,10 +45,6 @@ def authorization() -> str:
     elif request.method == 'POST':
         pass
 
-
-@app.route('/get_data')
-def get_data():
-    pass
 
 if __name__ == '__main__':
     app.run()

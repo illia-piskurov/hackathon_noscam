@@ -12,10 +12,18 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "env": {
-                "MONGO_USERNAME": "mongostar",
-                "MONGO_PASSWORD": "starmongo",
-                "MONGO_DB_NAME": "hackathon",
-                "MONGO_PORT": "27017",
+                "DB_NAME": "hackathon.db",
+            }
+        },
+        {
+            "name": "Python: prepare_db_with_data.py",
+            "type": "python",
+            "request": "launch",
+            "program": "prepare_db_with_data.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "DB_NAME": "hackathon.db",
             }
         }
     ]
