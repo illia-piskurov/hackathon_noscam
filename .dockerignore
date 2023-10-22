@@ -1,1 +1,6 @@
 .vscode
+app
+__pycacha__
+README.md
+hackathon.db
+prepare_db_with_data.py
