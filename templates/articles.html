@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon</title>
-    <link rel="stylesheet" href="../static/styles/header.css">
-    <link rel="stylesheet" href="../static/styles/common.css">
-    <link rel="stylesheet" href="../static/styles/container-article.css">
-    <link rel="stylesheet" href="../static/styles/button.css">
-    <link rel="stylesheet" href="../static/styles/field.css">
-    <link rel="stylesheet" href="../static/styles/add-button.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/container-article.css">
+    <link rel="stylesheet" href="styles/button.css">
+    <link rel="stylesheet" href="styles/field.css">
+    <link rel="stylesheet" href="styles/add-button.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-            <a href="#">Пошук</a>
-            <a href="#">Статті</a>
-            <a href="#" class="right-link">Війти</a>
+            <a href="/">Пошук</a>
+            <a href="articles.html">Статті</a>
+            <a href="authorization.html" class="right-link">Війти</a>
         </nav>
     </header>
 
-    <div class="container-article-closed">
-        <h3>{{title}}</h3>
-        <p>{{desc}}</p>
-
-        <button class="button"> 
-            Читати
-        </button>
+    <div class="container-article">
+        {% for article in articles %}
+        <div class="container-article-closed">
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.desc }}</p>
+            <form action="{{ url_for('view_article', article_id=article.id) }}" method="get">
+                <button type="submit" class="button">Читати</button>
+            </form>
+        </div>
+        {% endfor %}
     </div>
 
     <button class="add-button">+</button>
 </body>
+
 </html>
