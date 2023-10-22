@@ -71,7 +71,7 @@ class Model:
         users = cursor.fetchall()
         user_to_find = (email, password)
 
-        result = any(user == user_to_find for user in users)
+        result = any((email, password) == user_to_find for _, email, password in users)
         conn.close()
         return result
 

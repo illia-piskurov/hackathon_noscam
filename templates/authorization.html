@@ -9,29 +9,34 @@
     <link rel="stylesheet" href="styles/container-center.css">
     <link rel="stylesheet" href="styles/button.css">
     <link rel="stylesheet" href="styles/field.css">
+    <link rel="stylesheet" href="styles/container2.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="#">Пошук</a>
-            <a href="#">Статті</a>
-            <a href="#" class="right-link">Війти</a>
+            <a href="index.html">Пошук</a>
+            <a href="articles.html">Статті</a>
+            <a href="authorization.html" class="right-link">Війти</a>
         </nav>
     </header>
 
     <div class="container-center">
-        <form>
+        <form method="post">
             <label for="email">Пошта:</label>
-            <input type="text" id="email" name="email" class="field"><br>
+            <input type="email" id="email" name="email" class="field"><br>
 
             <label for="password">Пароль:</label>
-            <input type="text" id="password" name="password" class="field"><br>
+            <input type="password" id="password" name="password" class="field"><br>
             
             <button class="button">
                 Вхід
             </button><br>
             <a href="registration.html">Нема акаунту? Натисни на мене!</a>
         </form> 
+    </div>
+
+    <div class="container2 {{style}} {{message_visible}}">
+        <h4>{{message}}</h4>
     </div>
 </body>
 </html>

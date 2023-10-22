@@ -33,17 +33,39 @@ def home() -> str:
                                     comment_visible='none',
                                     style='green')
         
-@app.route('/registration', methods=['POST'])
+@app.route('/registration.html', methods=['GET', 'POST'])
 def registration() -> str:
-    email    = request.form['email']
-    password = request.form['password']
+    if request.method == 'GET':
+        return render_template('registration.html')
+    elif request.method == 'POST':
+        email    = request.form['email']
+        password = request.form['password']
+        model.insert_user(email, password)
+        message = 'Ви вдало зареєструвалися на сайті'
+        return render_template('index.html',
+                               message=message,
+                               comment_visible='none',
+                               style='green')
+    
 
 @app.route('/authorization.html', methods=['GET', 'POST'])
 def authorization() -> str:
     if request.method == 'GET':
-        return render_template('authorization.html')
+        return render_template('authorization.html',
+                               message_visible='none')
     elif request.method == 'POST':
-        pass
+        email    = request.form['email']
+        password = request.form['password']
+        if model.check_user(email, password):
+            return render_template('index.html',
+                                   message_visible='none',
+                                   comment_visible='none')
+        # Почати сесію
+        else:
+            message = 'Ви або не зареєстровані або помилилися в паролі 😔'
+            return render_template('authorization.html',
+                                   style='red',
+                                   message=message)
 
 @app.route('/articles.html', methods=['GET'])
 def articles() -> str:
@@ -63,12 +85,28 @@ def add_number() -> str:
 
     if number is not None and comment is not None:
         model.insert_num(number, comment)
-        message = 'Номер був успішно доданий в базу'
+        message = f'Номер {number} був успішно доданий в базу з коментарем "{comment}"'
         return render_template('add_number.html',
                                message=message,
                                style='green')
     else:
         return render_template('add_number.html',
+                               message_visible='none')
+    
+@app.route('/add_article.html', methods=['GET'])
+def add_article() -> str:
+    title  = request.args.get('title')
+    desc   = request.args.get('desc')
+    text   = request.args.get('text')
+
+    if title is not None and desc is not None and text is not None:
+        model.insert_article(title, desc, text)
+        message = f'Стаття "{title}" була успішно додана в базу даних'
+        return render_template('add_article.html',
+                               message=message,
+                               style='green')
+    else:
+        return render_template('add_article.html',
                                message_visible='none')
 
 if __name__ == '__main__':
