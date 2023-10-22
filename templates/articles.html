@@ -25,9 +25,9 @@
     <div class="container-article">
         {% for article in articles %}
         <div class="container-article-closed">
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.desc }}</p>
-            <form action="{{ url_for('view_article', article_id=article.id) }}" method="get">
+            <h3>{{ article[1] }}</h3>
+            <p>{{ article[2] }}</p>
+            <form action="{{ url_for('view_article', article_id=article[0]) }}" method="get">
                 <button type="submit" class="button">Читати</button>
             </form>
         </div>

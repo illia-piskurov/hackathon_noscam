@@ -45,17 +45,31 @@ def authorization() -> str:
     elif request.method == 'POST':
         pass
 
-@app.route('/articles', methods=['GET'])
+@app.route('/articles.html', methods=['GET'])
 def articles() -> str:
     articles = model.get_articles()
     if articles is not None:
-        return render_template('articles.html', articles)
+        return render_template('articles.html', articles=articles)
 
 @app.route('/article/<int:article_id>', methods=['GET'])
-def view_article(article_id):
-    # Отримайте дані про конкретну статтю за її ID та передайте їх на сторінку article.html
+def view_article(article_id) -> str:
     article = model.get_article_by_id(article_id)
-    return render_template('article.html', title=article['title'], text=article['text'])
+    return render_template('article.html', title=article[1], text=article[3])
+
+@app.route('/add_number.html', methods=['GET'])
+def add_number() -> str:
+    number  = request.args.get('number')
+    comment = request.args.get('comment')
+
+    if number is not None and comment is not None:
+        model.insert_num(number, comment)
+        message = 'Номер був успішно доданий в базу'
+        return render_template('add_number.html',
+                               message=message,
+                               style='green')
+    else:
+        return render_template('add_number.html',
+                               message_visible='none')
 
 if __name__ == '__main__':
     app.run()

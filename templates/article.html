@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon</title>
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/container-article.css">
-    <link rel="stylesheet" href="styles/button.css">
-    <link rel="stylesheet" href="styles/field.css">
-    <link rel="stylesheet" href="styles/add-button.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/common.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/container-article.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/field.css') }}">
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="#">Пошук</a>
-            <a href="#">Статті</a>
-            <a href="#" class="right-link">Війти</a>
+            <a href="{{ url_for('home') }}">Пошук</a>
+            <a href="{{ url_for('articles') }}">Статті</a>
+            <a href="{{ url_for('authorization') }}" class="right-link">Війти</a>
         </nav>
     </header>
 

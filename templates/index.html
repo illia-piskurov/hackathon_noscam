@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/container2.css">
     <link rel="stylesheet" href="styles/button.css">
     <link rel="stylesheet" href="styles/field.css">
+    <link rel="stylesheet" href="styles/add-button.css">
 </head>
 <body>
     <header>
@@ -38,6 +39,9 @@
         <h4>{{comment}}</h4>
     </div>
 
-    <button class="add-button">+</button>
+    <form action="{{ url_for('add_number') }}" method="get">
+        <button class="add-button" type="submit">+</button>
+    </form>
+
 </body>
 </html>
