@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    height: max-content;
+    margin-top: 100px;
 }
 
 .container-center .button-center{
