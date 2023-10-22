@@ -45,6 +45,17 @@ def authorization() -> str:
     elif request.method == 'POST':
         pass
 
+@app.route('/articles', methods=['GET'])
+def articles() -> str:
+    articles = model.get_articles()
+    if articles is not None:
+        return render_template('articles.html', articles)
+
+@app.route('/article/<int:article_id>', methods=['GET'])
+def view_article(article_id):
+    # Отримайте дані про конкретну статтю за її ID та передайте їх на сторінку article.html
+    article = model.get_article_by_id(article_id)
+    return render_template('article.html', title=article['title'], text=article['text'])
 
 if __name__ == '__main__':
     app.run()
