@@ -30,16 +30,16 @@ cursor.executescript('''
 
 cursor.executescript('''
     INSERT INTO numbers (number, comment) VALUES
-        ('+380662276711', 'Цей номер був помічений в спробах продати чудо-водічку'),
-        ('+380958775612', 'Цей номер був питав мене про 3 цифри на карточці ззаду');
+        ('+380662276711', 'This number was noticed in attempts to sell miracle water'),
+        ('+380958775612', 'This number was asking me about 3 digits on the back of my card');
     
     INSERT INTO articles (title, desc, text) VALUES
-        ('Як не попастися на продажу чудо-водічкі', 'Короткий опис', 'Тут стаття'),
-        ('Чому не варто казати номер CVV', 'Короткий опис', 'Тут стаття'),
-        ('Як не попастися на обман в криптобізнесі', 'Короткий опис', 'Тут стаття'),
-        ('Як правильно купувати криптовалюту', 'Короткий опис', 'Тут стаття'),
-        ('Чому не варто робити свій номер загальнодоступним', 'Короткий опис', 'Тут стаття'),
-        ('Що робити якщо вам дзвонять шахраї', 'Короткий опис', 'Тут стаття');
+        ('How not to fall for offers that sell miracle water', 'Short description', 'Here is the article'),
+        ('Why you should not disclose your CVV number', 'Short description', 'Here is the article'),
+        ('How not to fall for a scam in the crypto business', 'Short description', 'Here is the article'),
+        ('How to buy cryptocurrency correctly', 'Short description', 'Here is the article'),
+        ('Why you should not make your number public', 'Short description', 'Here is the article'),
+        ('What to do if you get a call from a scammer', 'Short description', 'Here is the article');
 ''')
 
 p_h1 = hashlib.sha256("hack1".encode()).hexdigest()

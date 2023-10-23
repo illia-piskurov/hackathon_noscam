@@ -24,13 +24,13 @@ def home() -> str:
     else:
         comment = model.check_num(number)
         if comment is not None:
-            message = f'Номер {number} є в базі даних шахраїв.'
+            message = f'Number {number} is in the fraud database.'
             return render_template('index.html',
                                     message=message,
                                     comment=comment,
                                     style='red')
         else:
-            message = f'Номеру {number} немає в базі даних шахраїв.'
+            message = f'Номеру {number} is not in the fraud database.'
             return render_template('index.html',
                                     message=message,
                                     comment_visible='none',
@@ -44,7 +44,7 @@ def registration() -> str:
         email    = request.form['email']
         password = request.form['password']
         model.insert_user(email, password)
-        message = 'Ви вдало зареєструвалися на сайті'
+        message = 'You have successfully registered on the site'
         return render_template('index.html',
                                message=message,
                                comment_visible='none',
@@ -66,7 +66,7 @@ def authorization() -> str:
                                    message_visible='none',
                                    comment_visible='none')
         else:
-            message = 'Ви або не зареєстровані або помилилися в паролі 😔'
+            message = 'You are either not registered or have made a mistake in your password 😔'
             return render_template('authorization.html',
                                    style='red',
                                    message=message)
@@ -95,7 +95,7 @@ def add_number() -> str:
 
         if number is not None and comment is not None:
             model.insert_num(number, comment)
-            message = f'Номер {number} був успішно доданий в базу з коментарем "{comment}"'
+            message = f'Number {number} was successfully added to the database with a comment "{comment}"'
             return render_template('add_number.html',
                                    message=message,
                                    style='green')
@@ -121,7 +121,7 @@ def add_article() -> str:
 
         if title is not None and desc is not None and text is not None:
             model.insert_article(title, desc, text)
-            message = f'Стаття "{title}" була успішно додана в базу даних'
+            message = f'Article "{title}" has been successfully added to the database'
             return render_template('add_article.html',
                                    message=message,
                                    style='green')
