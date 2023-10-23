@@ -15,18 +15,19 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="/">Пошук</a>
-            <a href="articles.html">Статті</a>
-            <a href="authorization.html" class="right-link">Війти</a>
+            <a href="/">Search</a>
+            <a href="articles.html">Articles</a>
+            <a href="authorization.html" class="right-link">Log in</a>
         </nav>
     </header>
 
     <div class="container">
         <form>
-            <label for="number">Номер:</label>
-            <input type="text" id="number" name="number" class="field" pattern="\+38\d{10}" title="Число має бути у форматі +380992276890">
+            <label for="number">Number:</label>
+            <input type="text" id="number" name="number" class="field" pattern="\+38\d{10}" 
+                placeholder="Example: +380992276890">
             <button class="button" type="submit">
-                Пошук
+                Search
             </button>
         </form> 
     </div>
@@ -35,7 +36,7 @@
         <h4>{{message}}</h4>
     </div>
     <div class="container2 {{comment_visible}}">
-        <h4>Коментар:</h4>
+        <h4>Comment:</h4>
         <h4>{{comment}}</h4>
     </div>
 
