@@ -1,3 +1,4 @@
+import hashlib
 import os
 import sqlite3
 
@@ -32,10 +33,6 @@ cursor.executescript('''
         ('+380662276711', 'Цей номер був помічений в спробах продати чудо-водічку'),
         ('+380958775612', 'Цей номер був питав мене про 3 цифри на карточці ззаду');
     
-    INSERT INTO users (email, password) VALUES
-        ('illia@gmail.com', 'hack1'),
-        ('gorlach@gmail.com', 'hack2');
-    
     INSERT INTO articles (title, desc, text) VALUES
         ('Як не попастися на продажу чудо-водічкі', 'Короткий опис', 'Тут стаття'),
         ('Чому не варто казати номер CVV', 'Короткий опис', 'Тут стаття'),
@@ -44,6 +41,11 @@ cursor.executescript('''
         ('Чому не варто робити свій номер загальнодоступним', 'Короткий опис', 'Тут стаття'),
         ('Що робити якщо вам дзвонять шахраї', 'Короткий опис', 'Тут стаття');
 ''')
+
+p_h1 = hashlib.sha256("hack1".encode()).hexdigest()
+p_h2 = hashlib.sha256("hack2".encode()).hexdigest()
+
+cursor.execute(f"INSERT INTO users (email, password) VALUES ('illia@gmail.com', '{p_h1}'), ('gorlach@gmail.com', '{p_h2}');")
 
 conn.commit()
 conn.close()

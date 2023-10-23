@@ -1,3 +1,4 @@
+import hashlib
 import os
 import sqlite3
 from typing import Optional, List, Tuple
@@ -43,7 +44,10 @@ class Model:
     def insert_user(self, email: str, password: str) -> None:
         conn   = sqlite3.connect(self.db_name)
         cursor = conn.cursor()
-        cursor.execute(f"INSERT INTO users (email, password) VALUES ('{email}', '{password}');")
+
+        password_hash = hashlib.sha256(password.encode()).hexdigest()
+
+        cursor.execute(f"INSERT INTO users (email, password) VALUES ('{email}', '{password_hash}');")
         conn.commit()
         conn.close()
 
@@ -69,9 +73,11 @@ class Model:
         cursor = conn.cursor()
         cursor.execute(f"SELECT * FROM users;")
         users = cursor.fetchall()
-        user_to_find = (email, password)
 
-        result = any((email, password) == user_to_find for _, email, password in users)
+        password_hash = hashlib.sha256(password.encode()).hexdigest()
+        user_to_find = (email, password_hash)
+
+        result = any((email, password_hash) == user_to_find for _, email, password_hash in users)
         conn.close()
         return result
 
