@@ -1,5 +1,5 @@
 # Hackathon No Scam
-To run еру program, you need to install dependencies:
+To run the program, you need to install dependencies:
 
 ```bash
 pip install -r requirements.txt
